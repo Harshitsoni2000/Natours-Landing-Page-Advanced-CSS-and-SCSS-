@@ -1,0 +1,154 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  Box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+$color-light-green: #7ed56f;
+$color-medium-green: #55c57a;
+$color-dark-green: #28b485;
+
+@mixin header-style($display, $fSize, $fWeight, $lSpace) {
+  display: $display;
+  font-size: $fSize;
+  font-weight: $fWeight;
+  letter-spacing: $lSpace;
+}
+
+@mixin animation-primary($opacityInit, $opacityFinal, $transformInit, $transformFinal) {
+  0% {
+    opacity: $opacityInit;
+    transform: $transformInit;
+  }
+  100% {
+    opacity: $opacityFinal;
+    transform: $transformFinal;
+  }
+}
+
+@mixin animation-btn {
+  animation: shrink 0.6s ease-out;
+
+  &:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 0.8rem 0.6rem 0.1rem rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.2rem 0.3rem 0.05rem rgba(0, 0, 0, 0.3);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 3.4rem;
+    position: absolute;
+    /* We need the position relative to the parent button, hence set position of parent button as relative; */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &:hover::after {
+    background-color: #fff;
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  color: #777;
+  line-height: 1.7;
+  padding: 3rem;
+  Box-sizing: border-box;
+}
+
+.header {
+  height: 95vh;
+  background: linear-gradient(to right bottom, rgba($color-light-green,.7), rgba($color-dark-green,.7)), url("../img/hero.jpg");
+  /* background-blend-mode: multiply; */
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+
+  .header__logo {
+    height: 3.5rem;
+  }
+}
+
+.header__info-box {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+
+  .header-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    .header-primary--main {
+      @include header-style(block, 6rem, 400, 3.5rem);
+      animation: moveInBottom 0.8s;
+    }
+
+    .header-primary--sub {
+      @include header-style(block, 2rem, 700, 1.74rem);
+      animation: moveInTop 0.8s;
+    }
+  }
+}
+
+@keyframes moveInBottom {
+  @include animation-primary(0, 1, translateY(10rem), translate(0));
+}
+
+@keyframes moveInTop {
+  @include animation-primary(0, 1, translateY(-10rem), translate(0));
+}
+
+.btn {
+  color: #777;
+  text-transform: uppercase;
+  border-radius: 3.4rem;
+  padding: 1.5rem 3rem;
+  display: inline-block;
+  transition: all 0.25s;
+  box-shadow: 0.2rem 0.3rem 2rem 0.05rem rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.1rem;
+  position: relative;
+  font-size: 1.6rem;
+
+  a:link,
+  a:visited {
+    color: #777;
+    text-decoration: none;
+    position: relative;
+  }
+
+  @include animation-btn;
+}
+
+@keyframes shrink {
+  @include animation-primary(0, 1, scale(1.5), translate(0))
+}
