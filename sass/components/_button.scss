@@ -1,0 +1,41 @@
+.btn-one {
+    text-transform: uppercase;
+    border-radius: 3.4rem;
+    padding: 1.5rem 3rem;
+    display: inline-block;
+    box-shadow: 0.2rem 0.3rem 3rem 1rem rgba($color-black, 0.1);
+    letter-spacing: 0.1rem;
+    position: relative;
+    @include animation-btn-one(#fff);
+    animation-delay: 0.4s;
+    transition: all 0.25s;
+
+    a:link,
+    a:visited {
+        color: $color-grey;
+        text-decoration: none;
+        position: relative;
+    }
+}
+
+.tours-section {
+    .btn-bottom {
+        background: radial-gradient($color-light-green, $color-medium-green);
+        a:link,
+        a:visited {
+            color: #fff;
+        }
+        @include animation-btn-one($color-light-green);
+    }
+    .btn-card {
+        background-color: #fff;
+        @include animation-btn-one(#fff);
+    }
+}
+
+.btn-two {
+    border: none;
+    border-bottom: 1px solid $color-dark-green;
+    @include animation-btn-two;
+    transition: all 0.25s;
+}

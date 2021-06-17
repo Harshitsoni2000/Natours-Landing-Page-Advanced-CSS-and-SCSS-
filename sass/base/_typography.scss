@@ -1,0 +1,129 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    color: $color-grey;
+    line-height: 1.7;
+}
+
+.header-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    &--main {
+        @include header-style(block, 6rem, 400, 3.5rem);
+    }
+
+    &--sub {
+        @include header-style(block, 2rem, 700, 1.74rem);
+    }
+}
+
+.header-secondary {
+    text-transform: uppercase;
+    @include header-style(inline-block, 3.5rem, 700, 0.07rem);
+    background: linear-gradient(to right bottom, $color-light-green, $color-medium-green, $color-dark-green);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.15s;
+
+    &:hover {
+        transform: skewX(20deg) scale(1.05) rotate(2deg);
+        text-shadow: 0.8rem 0.8rem 1.2rem rgba($color-grey, 0.7);
+    }
+}
+
+.header-tertiary {
+    text-transform: uppercase;
+    @include header-style(block, 1.6rem, 700, 0.05rem);
+}
+
+.about-section {
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+.features-section {
+    p {
+        font-size: 1.5rem;
+    }
+}
+
+.btn {
+    font-size: 1.6rem;
+}
+
+.far,
+.fas {
+    background: linear-gradient(to right bottom, $color-light-green, $color-medium-green, $color-dark-green);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba($color-grey, 0.2);
+        }
+    }
+}
+
+.card-body {
+    position: relative;
+    padding: 2rem 4rem;
+
+    p {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 2.8rem;
+        position: absolute;
+        right: 2rem;
+        padding: 0.3rem 0.5rem;
+    }
+
+    p:nth-child(1) {
+        top: -10rem;
+    }
+
+    p:nth-child(2) {
+        top: -5rem;
+    }
+
+    &-sea {
+        p {
+            background: linear-gradient(to right bottom, rgba(#ffb900,.7), rgba(#ff7730,.7));
+        }
+    }
+
+    &-forest {
+        p {
+            background: linear-gradient(to right bottom, rgba($color-light-green, 0.7), rgba($color-dark-green, 0.7));
+        }
+    }
+
+    &-snow {
+        p {
+            background: linear-gradient(to right bottom, rgba(#2998ff,.7), rgba(#5643fa,.7));
+        }
+    }
+}
+
+.card-cta {
+    color: #fff;
+    width: 90%;
+
+    p:nth-child(1) {
+        font-size: 1.4rem;
+    }
+
+    p:nth-child(2) {
+        font-size: 6rem;
+        font-weight: lighter;
+    }
+}

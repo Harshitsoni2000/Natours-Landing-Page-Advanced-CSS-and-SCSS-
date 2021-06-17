@@ -1,0 +1,47 @@
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  .col-info {
+    padding: 0;
+  }
+  .col-image {
+    padding: 0;
+    position: relative;
+    img {
+      box-sizing: content-box;
+      width: 50%;
+      box-shadow: 1rem 3rem 2rem rgba($color-black, 0.4);
+      outline-offset: 2rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      &.image-1 {
+        left: 6%;
+        top: -10%;
+        transition: transform 0.25s, outline 0.25s, z-index 0.25s;
+      }
+
+      &.image-2 {
+        left: 46%;
+        transition: transform 0.25s, outline 0.25s, z-index 0.25s;
+      }
+
+      &.image-3 {
+        left: 22.5%;
+        top: 22.5%;
+        transition: transform 0.25s, outline 0.25s, z-index 0.25s;
+      }
+
+      &:hover {
+        transform: scale(1.1) translateY(-0.6rem);
+        outline: 1.5rem solid $color-dark-green;
+        z-index: 5;
+        backface-visibility: hidden;
+      }
+    }
+    &:hover img:not(:hover) {
+      transform: scale(0.90);
+    }
+  }
+}

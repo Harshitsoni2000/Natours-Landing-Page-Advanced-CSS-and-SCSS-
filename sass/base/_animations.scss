@@ -1,0 +1,11 @@
+@keyframes moveInBottom {
+  @include animation-primary(0, 1, translateY(10rem), translate(0));
+}
+
+@keyframes moveInTop {
+  @include animation-primary(0, 1, translateY(-10rem), translate(0));
+}
+
+@keyframes shrink {
+  @include animation-primary(0, 1, scale(1.5), translate(0));
+}
