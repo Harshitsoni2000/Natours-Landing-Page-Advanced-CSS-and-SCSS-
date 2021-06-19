@@ -67,10 +67,12 @@ ul {
     li {
         font-size: 1.5rem;
         padding: 1rem 0;
+    }
+}
 
-        &:not(:last-child) {
-            border-bottom: 1px solid rgba($color-grey, 0.2);
-        }
+.tours-section {
+    li:not(:last-child) {
+        border-bottom: 1px solid rgba($color-grey, 0.2);
     }
 }
 
@@ -125,5 +127,54 @@ ul {
     p:nth-child(2) {
         font-size: 6rem;
         font-weight: lighter;
+    }
+}
+
+.story {
+    &__shape {
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    &__text {
+        color: $color-grey;
+        font-size: $default-font-size;
+        text-align: left;
+    }
+}
+
+.booking__card--content-form {
+    font-family: inherit;
+
+    .form-group {
+
+        .label {
+            font-size: $default-font-size;
+            color: $color-grey;
+            font-weight: 500;
+        }
+
+        .form-control {
+            font-size: 1.5rem;
+        }
+
+        .radio__group {
+            color: $color-grey-light;
+            font-size: 1.5rem;
+        }
+
+        .btn-one {
+            color: #fff;
+        }
+    }
+}
+
+.footer {
+    font-size: 1.4rem;
+    color: #ddd;
+
+    ul {
+        text-transform: uppercase;
     }
 }

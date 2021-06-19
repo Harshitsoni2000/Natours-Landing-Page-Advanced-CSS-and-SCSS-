@@ -53,12 +53,12 @@
 
 @mixin animation-btn-two {
   &:hover {
-    transform: translateY(-1rem);
-    box-shadow: 0 0.8rem 0.3rem 0.1rem rgba($color-black, 0.1);
+    transform: translateY(-0.4rem);
+    box-shadow: 0 0.3rem 2rem 0.1rem rgba($color-black, 0.1);
   }
   &:active {
     transform: translateY(-0.1rem);
-    box-shadow: 0 0.2rem 0.1rem 0.05rem rgba($color-black, 0.1);
+    box-shadow: 0 0.1rem 1.7rem 0.05rem rgba($color-black, 0.1);
   }
 }
 

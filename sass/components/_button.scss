@@ -1,12 +1,12 @@
 .btn-one {
     text-transform: uppercase;
+    border: none;
     border-radius: 3.4rem;
     padding: 1.5rem 3rem;
     display: inline-block;
     box-shadow: 0.2rem 0.3rem 3rem 1rem rgba($color-black, 0.1);
     letter-spacing: 0.1rem;
     position: relative;
-    @include animation-btn-one(#fff);
     animation-delay: 0.4s;
     transition: all 0.25s;
 
@@ -18,9 +18,15 @@
     }
 }
 
+.header {
+    .btn {
+        @include animation-btn-one(#fff);
+    }
+}
+
 .tours-section {
     .btn-bottom {
-        background: radial-gradient($color-light-green, $color-medium-green);
+        background: linear-gradient(to right bottom, $color-light-green, $color-medium-green, $color-medium-green);
         a:link,
         a:visited {
             color: #fff;
@@ -30,6 +36,13 @@
     .btn-card {
         background-color: #fff;
         @include animation-btn-one(#fff);
+    }
+}
+
+.booking-section {
+    .btn-one {
+        background: linear-gradient(to right bottom, $color-light-green, $color-medium-green, $color-medium-green);
+        @include animation-btn-one($color-light-green);
     }
 }
 
