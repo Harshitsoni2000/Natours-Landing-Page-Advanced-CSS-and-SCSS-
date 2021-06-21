@@ -46,6 +46,13 @@
     }
 }
 
+.popup {
+    .btn-one {
+        background: linear-gradient(to right bottom, $color-light-green, $color-medium-green, $color-medium-green);
+        @include animation-btn-one($color-light-green);
+    }
+}
+
 .btn-two {
     border: none;
     border-bottom: 1px solid $color-dark-green;

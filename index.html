@@ -17,6 +17,21 @@
 </head>
 
 <body>
+    <div class="navigation">
+        <input type="checkbox" id="checkbox" class="navigation__checkbox">
+        <label for="checkbox" class="navigation__label">
+            <span class="navigation__label__span"></span>
+        </label>
+        <nav class="navigation__nav">
+            <ul class="nav__list">
+                <li class="nav__list__item"><a href="#about" class="nav__list__item__link">About</a></li>
+                <li class="nav__list__item"><a href="#benefits" class="nav__list__item__link">Benefits</a></li>
+                <li class="nav__list__item"><a href="#tours" class="nav__list__item__link">Tours</a></li>
+                <li class="nav__list__item"><a href="#stories" class="nav__list__item__link">Stories</a></li>
+                <li class="nav__list__item"><a href="#booking" class="nav__list__item__link">Book</a></li>
+            </ul>
+        </nav>
+    </div>
     <header class="header">
         <div class="header__logo-box">
             <img src="img/logo-white.png" alt="Logo" class="header__logo">
@@ -31,7 +46,7 @@
     </header>
 
     <main>
-        <section class="about-section">
+        <section id="about" class="about-section">
             <h2 class="header-secondary u-margin-bottom-8">Exciting tours for adventurous people</h2>
             <div class="row">
                 <div class="col col-info text-left">
@@ -48,7 +63,7 @@
                 </div>
             </div>
         </section>
-        <section class="features-section">
+        <section id="benefits" class="features-section">
             <div class="row">
                 <div class="col">
                     <i class="fas fa-globe fa-5x"></i>
@@ -72,7 +87,7 @@
                 </div>
             </div>
         </section>
-        <section class="tours-section">
+        <section id="tours" class="tours-section">
             <h2 class="header-secondary u-margin-bottom-8">Most Popular Tours</h2>
             <div class="row">
                 <div class="col u-margin-bottom-8">
@@ -82,12 +97,12 @@
                             <div class="card-body card-body-sea">
                                 <p>The Sea</p>
                                 <p>Explorer</p>
-                                <ul>
-                                    <li>3 day tours</li>
-                                    <li>Up to 30 people</li>
-                                    <li>2 tour guides</li>
-                                    <li>Sleep in cozy hotels</li>
-                                    <li>Difficulty: easy</li>
+                                <ul class="tours__list">
+                                    <li class="tours__list__item">3 day tours</li>
+                                    <li class="tours__list__item">Up to 30 people</li>
+                                    <li class="tours__list__item">2 tour guides</li>
+                                    <li class="tours__list__item">Sleep in cozy hotels</li>
+                                    <li class="tours__list__item">Difficulty: easy</li>
                                 </ul>
                             </div>
                         </div>
@@ -95,7 +110,7 @@
                             <div class="card-cta">
                                 <p>only</p>
                                 <p>$497</p>
-                                <button class="btn btn-one btn-card" type="button" name="button"><a href="#">book now!</a></button>
+                                <button class="btn btn-one btn-card" type="button" name="button"><a href="#popup">book now!</a></button>
                             </div>
                         </div>
                     </div>
@@ -107,12 +122,12 @@
                             <div class="card-body card-body-forest">
                                 <p>The Forest</p>
                                 <p>Hiker</p>
-                                <ul>
-                                    <li>7 day tours</li>
-                                    <li>Up to 40 people</li>
-                                    <li>6 tour guides</li>
-                                    <li>Sleep in provided tents</li>
-                                    <li>Difficulty: medium</li>
+                                <ul class="tours__list">
+                                    <li class="tours__list__item">7 day tours</li>
+                                    <li class="tours__list__item">Up to 40 people</li>
+                                    <li class="tours__list__item">6 tour guides</li>
+                                    <li class="tours__list__item">Sleep in provided tents</li>
+                                    <li class="tours__list__item">Difficulty: medium</li>
                                 </ul>
                             </div>
                         </div>
@@ -120,7 +135,7 @@
                             <div class="card-cta">
                                 <p>only</p>
                                 <p>$697</p>
-                                <button class="btn btn-one btn-card" type="button" name="button"><a href="#">book now!</a></button>
+                                <button class="btn btn-one btn-card" type="button" name="button"><a href="#popup">book now!</a></button>
                             </div>
                         </div>
                     </div>
@@ -132,12 +147,12 @@
                             <div class="card-body card-body-snow">
                                 <p>The Snow</p>
                                 <p>Adventurer</p>
-                                <ul>
-                                    <li>5 day tours</li>
-                                    <li>Up to 15 people</li>
-                                    <li>3 tour guides</li>
-                                    <li>Sleep in provided tents</li>
-                                    <li>Difficulty: hard</li>
+                                <ul class="tours__list">
+                                    <li class="tours__list__item">5 day tours</li>
+                                    <li class="tours__list__item">Up to 15 people</li>
+                                    <li class="tours__list__item">3 tour guides</li>
+                                    <li class="tours__list__item">Sleep in provided tents</li>
+                                    <li class="tours__list__item">Difficulty: hard</li>
                                 </ul>
                             </div>
                         </div>
@@ -145,7 +160,7 @@
                             <div class="card-cta">
                                 <p>only</p>
                                 <p>$897</p>
-                                <button class="btn btn-one btn-card" type="button" name="button"><a href="#">book now!</a></button>
+                                <button class="btn btn-one btn-card" type="button" name="button"><a href="#popup">book now!</a></button>
                             </div>
                         </div>
                     </div>
@@ -153,7 +168,7 @@
             </div>
             <button class="btn btn-one btn-bottom"><a href="#">Discover our tours</a></button>
         </section>
-        <section class="stories-section">
+        <section id="stories" class="stories-section">
             <div class="bg-video">
                 <video autoplay muted loop>
                     <source src="img/video.mp4" type="video/mp4">
@@ -184,7 +199,7 @@
             </div>
             <button class="btn btn-two btn-outline-success">Read all stories ➡</button>
         </section>
-        <section class="booking-section">
+        <section id="booking" class="booking-section">
             <div class="container booking__card">
                 <div class="booking__card--content">
                     <h2 class="header-secondary u-margin-bottom-4 form-control">Start Booking now</h2>
@@ -243,36 +258,29 @@
         </div>
         <p>&copy 2021 Harshit Soni</p>
     </footer>
-
-    <!-- <section class="grid clearfix">
-
-    <div class="grid-row clearfix">
-      <div class="col-1-of-3">
-        Col 1 of 3
-      </div>
-      <div class="col-2-of-3">
-        Col 2 of 3
-      </div>
-      <div class="col-3-of-3">
-        Col 3 of 3
-      </div>
+    <div id="popup" class="popup">
+        <div class="row popup__content">
+            <a href="#tours" class="popup__close">&times;</a>
+            <div class="col-4 popup__content__images">
+                <img src="img/nat-8.jpg" alt="">
+                <img src="img/nat-9.jpg" alt="">
+            </div>
+            <div class="col-8 popup__content__info">
+                <h2 class="header-secondary u-margin-bottom-3">start booking now</h2>
+                <h3 class="header-tertiary u-margin-bottom-2">Important &ndash; Below are the details regarding this package. Read Them Carefully.</h3>
+                <p class="info__columns u-margin-bottom-3">
+                    Aliqua officia te appellat, incididunt ea deserunt. Ipsum quo singulis si quid,
+                    hic laboris comprehenderit, nulla pariatur ne mentitum est aliquip de fore,
+                    laboris si irure commodo, sint exercitation mandaremus velit offendit qui aut
+                    quorum te malis, ita malis se tempor. Ita ut velit eiusmod, ullamco relinqueret
+                    eu incurreret de quo ne magna cillum anim iis ingeniis ad dolore singulis se
+                    mentitum praesentibus ad expetendis, ex culpa duis qui cupidatat aut an o tempor
+                    commodo, ita aut quem laboris.Ita fore consectetur.
+                </p>
+                <button type="button" class="btn btn-one">Book now</button>
+            </div>
+        </div>
     </div>
-    <div class="grid-row clearfix">
-      <div class="col-1-of-4">
-        Col 1 of 4
-      </div>
-      <div class="col-2-of-4">
-        Col 2 of 4
-      </div>
-      <div class="col-3-of-4">
-        Col 3 of 4
-      </div>
-      <div class="col-4-of-4">
-        Col 4 of 4
-      </div>
-    </div>
-  </section> -->
-
 </body>
 
 </html>

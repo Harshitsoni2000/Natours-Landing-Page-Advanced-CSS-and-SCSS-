@@ -1,0 +1,190 @@
+.navigation {
+    &__checkbox {
+        display: none;
+
+        &:checked {
+            & + .navigation__label {
+
+                .navigation__label__span {
+                        background: transparent;
+
+                    &::before {
+                        transform: rotate(-225deg);
+                    }
+
+                    &::after {
+                        transform: rotate(225deg);
+                    }
+                }
+            }
+
+            & ~ .navigation__nav {
+                height: 25rem;
+                padding: 0.3rem 0;
+                z-index: 100;
+                border-radius: 3rem;
+                box-shadow: 0.2rem 1rem 4rem 100rem rgba($color-black, 0.7);
+
+                .nav__list {
+                    & > * {
+                        opacity: 1;
+                    }
+
+                    &__item {
+                        &:nth-child(1) {
+                            transform: translateY(0);
+                        }
+
+                        &:nth-child(2) {
+                            transform: translateY(0);
+                        }
+
+                        &:nth-child(3) {
+                            transform: translateY(0);
+                        }
+
+                        &:nth-child(4) {
+                            transform: translateY(0);
+                        }
+
+                        &:nth-child(5) {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__label {
+        height: 6rem;
+        width: 6rem;
+        background-color: #fff;
+        position: fixed;
+        right: 11rem;
+        top: 6rem;
+        z-index: 150;
+        border-radius: 50%;
+        box-shadow: 0.2rem 0.2rem 4rem rgba($color-black, 0.7);
+        cursor: pointer;
+        animation: rotateIn 1s;
+
+        &__span {
+
+            &,
+            &::before,
+            &::after {
+                display: inline-block;
+                background: linear-gradient(to right bottom, $color-light-green, $color-medium-green, $color-dark-green);
+                z-index: 200;
+                height: 0.2rem;
+                position: absolute;
+                transition: all 0.25s;
+            }
+
+            width: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            &::after,
+            &::before {
+                content: "";
+                width: 100%;
+                transform-origin: center;
+            }
+
+            &::before {
+                transform: translateY(-0.8rem);
+            }
+
+            &::after {
+                transform: translateY(0.8rem);
+            }
+        }
+
+        &:hover &__span {
+
+            &::before {
+                transform: translateY(-1.3rem);
+            }
+
+            &::after {
+                transform: translateY(1.3rem);
+            }
+        }
+    }
+
+    .navigation__nav {
+        height: 0;
+        width: 20rem;
+        background: linear-gradient(to left bottom, $color-dark-green, $color-medium-green, $color-light-green);
+        position: fixed;
+        right: 0;
+        border-radius: 0;
+        z-index: -1;
+        transform: translate(-4rem, 10rem);
+        transition: all 0.5s;
+
+        .nav__list {
+            margin: 0;
+            text-align: center;
+            text-transform: uppercase;
+
+            & > * {
+                opacity: 0;
+                transition: all 0.5s;
+            }
+
+            &__item {
+                &:nth-child(1) {
+                    top: 0.75rem;
+                }
+                transform: translateY(-2rem);
+
+                &:nth-child(2) {
+                    top: 4.75rem;
+                    transform: translateY(-6rem);
+                }
+
+                &:nth-child(3) {
+                    top: 8.75rem;
+                    transform: translateY(-12rem);
+                }
+
+                &:nth-child(4) {
+                    top: 12.75rem;
+                    transform: translateY(-15rem);
+                }
+
+                &:nth-child(5) {
+                    top: 16.75rem;
+                    transform: translateY(-20rem);
+                }
+
+                &__link {
+                    &:link,
+                    &:visited {
+                        display: inline-block;
+                        color: $color-grey-light;
+                        padding: 0 0.3rem;
+                        margin: 0.3rem;
+                        font-size: 2.5rem;
+                        background: linear-gradient(135deg, transparent 0%, transparent 50%, white 50%);
+                        background-size: 300%;
+                        background-clip: padding-box;
+                        transition: all 0.3s;
+                    }
+
+                    &:active,
+                    &:hover {
+                        text-decoration: none;
+                        background-position: 91%;
+                        color: $color-dark-green;
+                        transform: translateX(1rem);
+                    }
+                }
+            }
+        }
+    }
+}

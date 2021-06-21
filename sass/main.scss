@@ -11,11 +11,13 @@
 @import "components/booking-card";
 @import "components/button";
 @import "components/card";
-@import "components/_imageSetup";
+@import "components/imageSetup";
+@import "components/popup";
 @import "components/story";
 
 @import "pages/home";
 
+@import "layout/navigation";
 @import "layout/header";
 @import "layout/grid";
 @import "layout/footer";

@@ -9,3 +9,7 @@
 @keyframes shrink {
   @include animation-primary(0, 1, scale(1.5), translate(0));
 }
+
+@keyframes rotateIn {
+    @include animation-primary(0, 1, translateX(10rem), translateX(0) rotate(720deg));
+}
