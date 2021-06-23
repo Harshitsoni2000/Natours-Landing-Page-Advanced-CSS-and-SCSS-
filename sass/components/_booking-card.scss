@@ -6,14 +6,31 @@
     padding: 5rem;
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
 
+    @media (max-width: 575px) {
+        width: 100%;
+        clip-path: none;
+        padding: 5rem 2rem;
+    }
+
     & > * {
         padding: 0;
         border: none;
     }
 
+    h2 {
+
+        @media (max-width: 575px) {
+            text-align: center;
+        }
+    }
+
     &-form {
         background: transparent;
         padding-right: 7rem;
+
+        @media (max-width: 575px) {
+            padding: 0 3rem;
+        }
 
         .form-group {
             margin: 0;
@@ -101,7 +118,6 @@
             }
 
             .radio__group {
-
                 & > * {
                     display: inline-block;
                 }
@@ -147,7 +163,6 @@
                                 background-clip: content-box;
                             }
                         }
-
                     }
 
                     &-label {

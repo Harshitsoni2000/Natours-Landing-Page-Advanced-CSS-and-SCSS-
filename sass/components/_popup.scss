@@ -8,19 +8,24 @@
     backdrop-filter: blur(0.2rem);
     visibility: hidden;
     opacity: 0;
+    z-index: -5;
     transition: all 0.4s;
 
     &__content {
         min-width: 75%;
         max-width: 114rem;
+        margin: 0;
+        @media (max-width: 575px) {
+            min-width: 85%;
+        }
         background: #fff;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(0);
         border-radius: 3px;
-        overflow: hidden;
-
+        // overflow: hidden;
+        z-index: -3;
         opacity: 0;
         transition: all 0.4s;
 
@@ -59,11 +64,23 @@
             & > * {
                 height: 50%;
                 width: 100%;
+
+                @media (max-width: 575px) {
+                    display: inline-block;
+                    height: 100%;
+                    width: 50%;
+                    float: left;
+                }
             }
         }
 
         &__info {
-            padding: 5rem;
+            padding: 6rem;
+
+            @media (max-width: 575px) {
+                padding: 2rem;
+            }
+            position: relative;
 
             .header-tertiary {
                 font-size: 1.4rem;
@@ -87,10 +104,12 @@
     &:target {
         visibility: visible;
         opacity: 1;
+        z-index: 200;
 
         .popup__content {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
+            z-index: 220;
         }
     }
 }

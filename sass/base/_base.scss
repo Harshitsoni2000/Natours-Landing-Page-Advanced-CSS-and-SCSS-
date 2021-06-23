@@ -1,18 +1,37 @@
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  Box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+    font-size: 68.75%; // 68.75%  of 16px = 11px
+    scroll-behavior: smooth;
+
+    @include responsive(desk) {
+        font-size: 62.5%; // 62.5% of 16px = 10px
+    }
+
+    @include responsive(tab-land) {
+        font-size: 56.25%; // 56.25% of 16px = 9px
+    }
+
+    @include responsive(tab-port) {
+        font-size: 50%; // 50% of 16px = 8px
+    }
+
+    @include responsive(phone) {
+        font-size: 43.75%; // 43.75% of 16px = 7px
+    }
 }
 
 body {
-  padding: 3rem;
-  Box-sizing: border-box;
-  overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include responsive(tab-port) {
+        padding: 0; // For screen width < 900px, body's padding will be 0.
+    }
 }

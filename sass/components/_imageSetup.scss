@@ -1,15 +1,38 @@
 .row {
   max-width: 114rem;
   margin: 0 auto;
+
+  @include responsive(tab-port) {
+    margin: 0 auto 5rem;
+  }
+
   .col-info {
     padding: 0;
+
+    @include responsive(tab-port) {
+        padding: 0 6rem;
+    }
+
+    @include responsive(phone) {
+        padding: 0 1rem;
+    }
   }
   .col-image {
     padding: 0;
     position: relative;
+
+    @include responsive(tab-port) {
+        margin: 4rem 0;
+    }
+
     img {
       box-sizing: content-box;
       width: 50%;
+
+      @include responsive(tab-port) {
+        width: 40%;
+      }
+
       box-shadow: 1rem 3rem 2rem rgba($color-black, 0.4);
       outline-offset: 2rem;
       position: absolute;

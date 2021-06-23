@@ -3,10 +3,13 @@
     border-radius: 3px;
     background: rgba(#fff, 0.4);
     backdrop-filter: blur(1rem);
-    padding: 6rem;
-    padding-left: 10rem;
+    padding: 6rem 6rem 6rem 10rem;
     box-shadow: 0.3rem 2rem 5rem rgba($color-black, 0.3);
     transform: skewX(-15deg);
+    @media (max-width: 575px) {
+        padding: 6rem 4rem 6rem 10rem;
+        transform: none;
+    }
 
     &__shape {
         margin: 0;
@@ -16,14 +19,29 @@
         shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) translateY(-1rem) skewX(15deg);
+        @include responsive(tab-port) {
+            transform: translateX(-5rem) translateY(-2rem) skewX(15deg);
+            shape-outside: circle(50% at 40% 30%);
+        }
+        @media (max-width: 575px) {
+            margin: 1rem 0;
+            shape-outside: circle(50% at 15% 45%);
+            transform: translateX(-6rem) translateY(-1rem) skewX(0);
+        }
 
         &--img {
             height: 100%;
             object-fit: cover;
-            transform: translateX(-4rem) translateY(1rem) scale(1.5);
+            transform: translateX(-4rem) translateY(0) scale(1.5);
             opacity: 1;
             transition: all 0.3s;
             backface-visibility: hidden;
+            @include responsive(tab-port) {
+                transform: translateX(-4.5rem) translateY(0rem) scale(1.5);
+            }
+            @media (max-width: 575px) {
+                transform: translateX(-4rem) translateY(0) scale(1.5);
+            }
         }
 
         &--capt {
@@ -50,6 +68,8 @@
     &__text {
         width: 90%;
         transform: skewX(15deg);
+        @media (max-width: 575px) {
+            transform: skewX(0);
+        }
     }
-
 }

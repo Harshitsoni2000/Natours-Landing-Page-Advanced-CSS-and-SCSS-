@@ -62,12 +62,55 @@
   }
 }
 
-@mixin col($numGutter, $numCol, $float, $margin-right) {
-  width: calc((100% - #{$numGutter} * #{$grid-gutter-right}) / #{$numCol});
-  float: $float;
-  margin-right: $margin-right;
-}
+// @mixin col($numGutter, $numCol, $float, $margin-right) {
+//   width: calc((100% - #{$numGutter} * #{$grid-gutter-right}) / #{$numCol});
+//   float: $float;
+//   margin-right: $margin-right;
+// }
 
 @mixin front($value) {
   z-index: 5;
 }
+
+//MEDIA QUERY MANAGER
+/*
+    0 - 600px: phone
+    600 -900px: tab-port
+    900 - 1200: tab-land
+    1200 - 1800: Desktop
+    1800+: Large Desktop(Current layout, so no need to write media queries)
+*/
+
+//BREAKPOINTS
+/*
+    - phone
+    - tab-port
+    - tab-land
+    - desktop
+*/
+
+// 1em = 16px
+@mixin responsive($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {    //600px
+            @content;
+        }
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) {    //900px
+            @content;
+        }
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) {    //1200px
+            @content;
+        }
+    }
+    @if $breakpoint == desk {
+        @media (max-width: 112.5em) {    //1800px
+            @content;
+        }
+    }
+}
+
+//ORDER : base + typography > general(header, footer ,etc) > Page > Components 

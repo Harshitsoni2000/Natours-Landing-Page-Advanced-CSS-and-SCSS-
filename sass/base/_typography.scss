@@ -12,10 +12,18 @@ body {
 
     &--main {
         @include header-style(block, 6rem, 400, 3.5rem);
+
+        @include responsive(tab-port) {
+            @include header-style(block, 5rem, 400, 2rem);
+        }
     }
 
     &--sub {
         @include header-style(block, 2rem, 700, 1.74rem);
+
+        @include responsive(phone) {
+            @include header-style(block, 1.8rem, 400, 0.8rem);
+        }
     }
 }
 
@@ -25,6 +33,15 @@ body {
     background: linear-gradient(to right bottom, $color-light-green, $color-medium-green, $color-dark-green);
     -webkit-background-clip: text;
     color: transparent;
+
+    @include responsive(tab-port) {
+        @include header-style(inline-block, 3rem, 700, 0.07rem);
+    }
+
+    @include responsive(phone) {
+        @include header-style(inline-block, 2.5rem, 700, 0.07rem);
+    }
+
     transition: all 0.15s;
 
     &:hover {
@@ -35,23 +52,37 @@ body {
 
 .header-tertiary {
     text-transform: uppercase;
-    @include header-style(block, 1.6rem, 700, 0.05rem);
+    @include header-style(block, $default-font-size, 700, 0.05rem);
+
+    @include responsive(tab-port) {
+        @include header-style(block, 1.4rem, 700, 0.05rem);
+    }
 }
 
-.about-section {
-    p {
-        font-size: 1.6rem;
+p {
+    font-size: $default-font-size;
+
+    @include responsive(tab-port) {
+        font-size: 1.2rem;
     }
 }
 
 .features-section {
     p {
-        font-size: 1.5rem;
+        font-size: $secondary-font-size;
+
+        @include responsive(tab-port) {
+            font-size: 1.2rem;
+        }
     }
 }
 
 .btn {
-    font-size: 1.6rem;
+    font-size: $default-font-size;
+
+    @include responsive(tab-port) {
+        font-size: 1.2rem;
+    }
 }
 
 .far,
@@ -67,83 +98,84 @@ ul {
 
 .tours-section {
 
+    .card-body {
+        color: #fff;
+
+        p {
+            font-size: 2.8rem;
+
+            @include responsive(tab-port) {
+                font-size: 2rem;
+            }
+
+            @include responsive(tab-port) {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
     .tours__list {
+        color: $color-grey;
 
         &__item {
-            font-size: 1.5rem;
+            font-size: $secondary-font-size;
             padding: 1rem 0;
+        }
+
+        @include responsive(tab-port) {
+            font-size: 1.2rem;
+        }
+
+        @include responsive(phone) {
+            font-size: 1rem;
         }
     }
 
     li:not(:last-child) {
         border-bottom: 1px solid rgba($color-grey, 0.2);
     }
-}
 
-.card-body {
-    position: relative;
-    padding: 2rem 4rem;
-
-    p {
+    .card-cta {
         color: #fff;
         text-transform: uppercase;
-        font-size: 2.8rem;
-        position: absolute;
-        right: 2rem;
-        padding: 0.3rem 0.5rem;
-    }
 
-    p:nth-child(1) {
-        top: -10rem;
-    }
+        p:nth-child(1) {
+            font-size: 1.4rem;
 
-    p:nth-child(2) {
-        top: -5rem;
-    }
+            @include responsive(phone) {
+                font-size: 1rem;
+            }
+        }
 
-    &-sea {
-        p {
-            background: linear-gradient(to right bottom, rgba(#ffb900,.7), rgba(#ff7730,.7));
+        p:nth-child(2) {
+            font-size: 6rem;
+            font-weight: lighter;
+
+            @include responsive(tab-port) {
+                font-size: 5rem;
+            }
+
+            @include responsive(phone) {
+                font-size: 4rem;
+            }
         }
     }
 
-    &-forest {
-        p {
-            background: linear-gradient(to right bottom, rgba($color-light-green, 0.7), rgba($color-dark-green, 0.7));
-        }
-    }
-
-    &-snow {
-        p {
-            background: linear-gradient(to right bottom, rgba(#2998ff,.7), rgba(#5643fa,.7));
-        }
-    }
-}
-
-.card-cta {
-    color: #fff;
-    width: 90%;
-
-    p:nth-child(1) {
-        font-size: 1.4rem;
-    }
-
-    p:nth-child(2) {
-        font-size: 6rem;
-        font-weight: lighter;
-    }
 }
 
 .story {
     &__shape {
         font-size: 1.7rem;
+
+        @include responsive(tab-port) {
+            font-size: $secondary-font-size;
+        }
+
         text-transform: uppercase;
         color: #fff;
     }
 
     &__text {
-        color: $color-grey;
-        font-size: $default-font-size;
         text-align: left;
     }
 }
@@ -152,20 +184,32 @@ ul {
     font-family: inherit;
 
     .form-group {
-
         .label {
             font-size: $default-font-size;
             color: $color-grey;
             font-weight: 500;
+
+            @include responsive(phone) {
+
+            }
         }
 
-        .form-control {
-            font-size: 1.5rem;
+        .form-control, .radio__group {
+            font-size: $secondary-font-size;
         }
 
         .radio__group {
             color: $color-grey-light;
-            font-size: 1.5rem;
+        }
+
+        @include responsive(phone) {
+            .label {
+                font-size: 1.4rem;
+            }
+
+            .form-control, .radio__group {
+                font-size: 1.3rem;
+            }
         }
 
         .btn-one {
@@ -176,6 +220,10 @@ ul {
 
 .footer {
     font-size: 1.4rem;
+
+    @include responsive(phone) {
+        font-size: 1.2rem;
+    }
     color: #ddd;
 
     ul {
