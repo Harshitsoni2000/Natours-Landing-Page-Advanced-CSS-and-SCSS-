@@ -34,21 +34,21 @@
             }
 
             .img-header-1 {
-                background: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg");
+                background: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/webp/nat-5.webp");
                 background-blend-mode: multiply;
                 background-position: center;
                 background-size: cover;
             }
 
             .img-header-2 {
-                background: linear-gradient(to right bottom, $color-light-green, $color-dark-green), url("../img/nat-6.jpg");
+                background: linear-gradient(to right bottom, $color-light-green, $color-dark-green), url("../img/webp/nat-6.webp");
                 background-blend-mode: multiply;
                 background-position: center;
                 background-size: cover;
             }
 
             .img-header-3 {
-                background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/nat-7.jpg");
+                background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/webp/nat-7.webp");
                 background-blend-mode: multiply;
                 background-position: center;
                 background-size: cover;

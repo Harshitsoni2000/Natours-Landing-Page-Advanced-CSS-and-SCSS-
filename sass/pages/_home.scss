@@ -13,7 +13,7 @@
 }
 
 .features-section {
-    background: linear-gradient(to right bottom, rgba($color-light-green,.7), rgba($color-dark-green,.7)), url("../img/nat-4.jpg");
+    background: linear-gradient(to right bottom, rgba($color-light-green,.7), rgba($color-dark-green,.7)), url("../img/webp/nat-4.webp");
     background-size: cover;
     background-position: top;
     padding: 30rem 0;
@@ -87,8 +87,8 @@
     }
 
     .booking__card {
-        // background: linear-gradient(105deg, rgba(#fff, 0.7) 0%, rgba(#fff, 0.8) 65%, transparent 65%), url("../img/nat-10.jpg");
-        background: url("../img/nat-10.jpg");
+        // background: linear-gradient(105deg, rgba(#fff, 0.7) 0%, rgba(#fff, 0.8) 65%, transparent 65%), url("../img/webp/nat-10.webp");
+        background: url("../img/webp/nat-10.webp");
         background-size: cover;
         background-position: top;
         max-width: 114rem;
