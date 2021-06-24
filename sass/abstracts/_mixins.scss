@@ -1,77 +1,73 @@
 @mixin header-style($display, $fSize, $fWeight, $lSpace) {
-  display: $display;
-  font-size: $fSize;
-  font-weight: $fWeight;
-  letter-spacing: $lSpace;
+    display: $display;
+    font-size: $fSize;
+    font-weight: $fWeight;
+    letter-spacing: $lSpace;
 }
-
 @mixin animation-primary($opacityInit, $opacityFinal, $transformInit, $transformFinal) {
-  0% {
-    opacity: $opacityInit;
-    transform: $transformInit;
-  }
-  100% {
-    opacity: $opacityFinal;
-    transform: $transformFinal;
-  }
+    0% {
+        opacity: $opacityInit;
+        transform: $transformInit;
+    }
+
+    100% {
+        opacity: $opacityFinal;
+        transform: $transformFinal;
+    }
 }
-
 @mixin animation-btn-one($after_color) {
-  animation: shrink 0.4s ease-out;
-  animation-fill-mode: backwards;
+    animation: shrink 0.4s ease-out;
+    animation-fill-mode: backwards;
 
-  &:hover {
-    transform: translateY(-1rem);
-    box-shadow: 0 0.8rem 0.6rem 0.1rem rgba($color-black, 0.3);
+    &:hover {
+        transform: translateY(-1rem);
+        box-shadow: 0 0.8rem 0.6rem 0.1rem rgba($color-black, 0.3);
+
+        &::after {
+            background-color: $after_color;
+            opacity: 0;
+            transform: scale(1.5);
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.2rem 0.3rem 0.05rem rgba($color-black, 0.3);
+    }
 
     &::after {
-      background-color: $after_color;
-      opacity: 0;
-      transform: scale(1.5);
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 3.4rem;
+        position: absolute;
+        /* We need the position relative to the parent button, hence set position of parent button as relative; */
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
     }
-  }
-
-  &:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.2rem 0.3rem 0.05rem rgba($color-black, 0.3);
-  }
-
-  &::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 3.4rem;
-    position: absolute;
-    /* We need the position relative to the parent button, hence set position of parent button as relative; */
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
 }
-
 @mixin animation-btn-two {
-  &:hover {
-    transform: translateY(-0.4rem);
-    box-shadow: 0 0.3rem 2rem 0.1rem rgba($color-black, 0.1);
-  }
-  &:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.1rem 1.7rem 0.05rem rgba($color-black, 0.1);
-  }
-}
+    &:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 0.3rem 2rem 0.1rem rgba($color-black, 0.1);
+    }
 
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.1rem 1.7rem 0.05rem rgba($color-black, 0.1);
+    }
+}
 // @mixin col($numGutter, $numCol, $float, $margin-right) {
 //   width: calc((100% - #{$numGutter} * #{$grid-gutter-right}) / #{$numCol});
 //   float: $float;
 //   margin-right: $margin-right;
 // }
-
 @mixin front($value) {
-  z-index: 5;
+    z-index: 5;
 }
-
 //MEDIA QUERY MANAGER
 /*
     0 - 600px: phone
@@ -80,7 +76,6 @@
     1200 - 1800: Desktop
     1800+: Large Desktop(Current layout, so no need to write media queries)
 */
-
 //BREAKPOINTS
 /*
     - phone
@@ -88,29 +83,31 @@
     - tab-land
     - desktop
 */
-
 // 1em = 16px
 @mixin responsive($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) {    //600px
+        @media only screen and (max-width: 37.5em) {
+            //600px
             @content;
         }
     }
     @if $breakpoint == tab-port {
-        @media (max-width: 56.25em) {    //900px
+        @media only screen and (max-width: 56.25em) {
+            //900px
             @content;
         }
     }
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) {    //1200px
+        @media only screen and (max-width: 75em) {
+            //1200px
             @content;
         }
     }
     @if $breakpoint == desk {
-        @media (max-width: 112.5em) {    //1800px
+        @media only screen and (max-width: 112.5em) {
+            //1800px
             @content;
         }
     }
 }
-
-//ORDER : base + typography > general(header, footer ,etc) > Page > Components 
+//ORDER : base + typography > general(header, footer ,etc) > Page > Components

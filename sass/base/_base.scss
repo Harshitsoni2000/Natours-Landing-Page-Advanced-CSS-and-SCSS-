@@ -35,3 +35,8 @@ body {
         padding: 0; // For screen width < 900px, body's padding will be 0.
     }
 }
+
+::selection {
+    background: $color-dark-green;
+    color: #fff;
+}

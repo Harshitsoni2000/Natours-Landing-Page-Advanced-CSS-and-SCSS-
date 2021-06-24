@@ -4,8 +4,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba($color-black, 0.7);
-    backdrop-filter: blur(0.2rem);
+    background: rgba($color-black, 0.4);
+
+    @supports (-webkit-backdrop-filter: blur(0.8rem)) or (backdrop-filter: blur(0.8rem)) {
+        background: rgba($color-black, 0.8);
+        -webkit-backdrop-filter: blur(0.8rem);
+        backdrop-filter: blur(0.8rem);
+    }
+
     visibility: hidden;
     opacity: 0;
     z-index: -5;

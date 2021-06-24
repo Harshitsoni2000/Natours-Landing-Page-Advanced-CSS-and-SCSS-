@@ -57,9 +57,28 @@
                     <button class="btn btn-two btn-outline-success">Learn more ➡</button>
                 </div>
                 <div class="col col-12 col-md-6 col-image">
-                    <img class="image-1" src="img/webp/nat-1-large.webp" alt="A Forest view">
+                <img srcset="img/webp/nat-1.webp 300w,img/webp/nat-1-large.webp 1000w"
+                     sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                     class="image-1"
+                     alt="A Forest view"
+                     src="img/webp/nat-1-large.webp"
+                >
+                    <!-- For browsers that do not support srcset or sizes -->
+                <img srcset="img/webp/nat-2.webp 300w,img/webp/nat-2-large.webp 1000w"
+                     sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                     class="image-2"
+                     alt="A Forest view"
+                     src="img/webp/nat-2-large.webp"
+                >
+                <img srcset="img/webp/nat-3.webp 300w,img/webp/nat-3-large.webp 1000w"
+                     sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                     class="image-3"
+                     alt="A Forest view"
+                     src="img/webp/nat-3-large.webp"
+                >
+                    <!-- <img class="image-1" src="img/webp/nat-1-large.webp" alt="A Forest view">
                     <img class="image-2" src="img/webp/nat-2-large.webp" alt="A Hill view">
-                    <img class="image-3" src="img/webp/nat-3-large.webp" alt="A Grassland view">
+                    <img class="image-3" src="img/webp/nat-3-large.webp" alt="A Grassland view"> -->
                 </div>
             </div>
         </section>
@@ -171,8 +190,8 @@
         <section id="stories" class="stories-section">
             <div class="bg-video">
                 <video autoplay muted loop>
-                    <source src="img/video.mp4" type="video/mp4">
                     <source src="img/video.webm" type="video/webm">
+                    <source src="img/video.mp4" type="video/mp4">
                     This video is not supported in Your Browser!
                 </video>
             </div>
@@ -237,8 +256,11 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="footer__logo-box">
-            <img class="footer-logo u-margin-bottom-6" src="img/webp/logo-green-1x.webp" alt="Natours Footer Logo">
+        <div class="footer__logo-box u-margin-bottom-6">
+            <picture class="footer-logo">
+                <source media="(max-width: 575px)" srcset="img/webp/logo-green-small-1x.webp 1x, img/webp/logo-green-small-2x.webp 2x">
+                <img srcset="img/webp/logo-green-2x.webp 2x, img/webp/logo-green-1x.webp 1x" alt="Natours Footer Logo">
+            </picture>
         </div>
         <div class="row footer__row">
             <div class="col-12 col-sm footer__row-col1">
